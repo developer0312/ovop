@@ -80,6 +80,9 @@ section {
   height: 100px;
 }
 .featured {
+  -webkit-box-shadow: 0 6px 4px -8px;
+  -moz-box-shadow: 0 6px 4px -8px;
+  box-shadow: 0 6px 10px -8px;
   text-align: center;
 }
 .featured h2 {
@@ -275,15 +278,15 @@ section {
 .footer {
   color: #fff;
   background-color: #7D9DD4;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .footer .soc {
   text-align: center;
 }
 .footer .soc img {
-  max-width: 30px;
-  min-height: 30px;
+  max-width: 20px;
+  max-height: 20px;
   margin-right: 1rem;
 }
 .feedback {
