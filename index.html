@@ -7,6 +7,55 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Andika" rel="stylesheet">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+        var arrLang = {
+            'en' : {
+                'h1' : 'natural products from kyrgyzstan',
+                'hsmall' : 'big production of different products in Kyrgyzstan',
+                'abouth2' : 'about us',
+                'aboutp' : 'One Village One Product (OVOP) Association is an organization of local  producers.It was established in 2011, in order to activate local communities in Issyk-Kul region,and aims to promote economic activities by introducing OVOP Movement.',
+                'aboutbtn' : 'more',
+                'productsh2' : 'Products',
+                'product1' : 'Felt production',
+                'product2' : 'Natural production',
+                'product3' : 'Cosmetic production',
+                'feath1' : 'Features',
+                'feat1' : 'Quality',
+                'feat2' : 'eco-friendly',
+                'feat3' : 'unique design',
+                'feat4' : 'made by local resources'
+
+
+            },
+            'ru' : {
+                'h1' : 'Натуральные продукты из Кыргызстана',
+                'hsmall' : 'большое производство разных продуктов в Кыргызстане',
+                'abouth2' : 'о нас',
+                'aboutp' : 'Ассоциация Одно Село Один Продукт (ОСОП)- является объединением местных производителей Иссык-Кульской области. ОСОП основан в 2011 году и ставит своей целью продвижение метода ОСОП.',
+                'aboutbtn' : 'подробнее',
+                'productsh2' : 'Продукты',
+                'product1' : 'Войлочная продукция',
+                'product2' : 'Натуральная продукция',
+                'product3' : 'Косметическая продукция',
+                'feath1' : 'преймущества',
+                'feat1' : 'качество',
+                'feat2' : 'экологически чистые',
+                'feat3' : 'уникальный дизайн',
+                'feat4' : 'сделано местными ресурсами'
+            }
+        };
+
+        $(function(){
+            $('.translate').click(function(){
+                var lang = $(this).attr('id');
+                console.log('success');
+                $('.lang').each(function(index,element){
+                    $(this).text(arrLang[lang][$(this).attr('key')]);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 	<section id="main" class="main">
@@ -17,15 +66,15 @@
 				</div></div>
 				<div class="col-lg-2 col-lg-offset-8 col-md-2 col-md-offset-8 col-sm-2 col-sm-offset-8">
                     <div class="row localization">
-                        <div class="ru"><a href="#">ru</a></div>
-                        <div class="en"><a href="#">eng</a></div>
+                        <div class="ru translate" id="ru"><a href="#">ru</a></div>
+                        <div class="en translate" id="en"><a href="#">eng</a></div>
                     </div>
 					</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<h1>natural products from kyrgyzstan</h1>
-					<p>bit production of different products in kyrgyzstan</p>
+					<h1 class="lang" key="h1">natural products from kyrgyzstan</h1>
+					<p class="lang" key="hsmall">big production of different products in kyrgyzstan</p>
 				</div>
 			</div>
 		</div>
@@ -33,10 +82,10 @@
 	<section id="featured" class="featured">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12"><h2>about us</h2>
-				<p>One Village One Product (OVOP) Association is an organization of local  producers.<br>It was established in 2011, in order to activate local communities in Issyk-Kul region,<br>and aims to promote economic activities by introducing OVOP Movement.</p>
+				<div class="col-lg-12 col-md-12 col-sm-12"><h2 class="lang" key="abouth2">about us</h2>
+				<p class="lang" key="aboutp">One Village One Product (OVOP) Association is an organization of local  producers.<br>It was established in 2011, in order to activate local communities in Issyk-Kul region,<br>and aims to promote economic activities by introducing OVOP Movement.</p>
 				<div class="main-button">
-				<a href="about.html">more</a></div></div>
+				<a href="about.html" class="lang" key="aboutbtn">more</a></div></div>
 			</div>
 		</div>
 	</section>
@@ -44,23 +93,23 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<h2>products</h2>
+					<h2 class="lang" key="productsh2">products</h2>
 				</div>
 		    </div>
 		    <div class="sections">
 		    	<div class="col-lg-4 col-md-4 col-sm-4">
 		    		<a href="products.html">
-		    		<h3>felt production</h3>
+		    		<h3 class="lang" key='product1'>felt production</h3>
 		    		<p><strong>_______________</strong></p></a>
 		    	</div>
 		    	<div class="col-lg-4 col-md-4 col-sm-4">
 		    		<a href="natural.html">
-		    		<h3>natural production</h3>
+		    		<h3 class="lang" key='product2'>natural production</h3>
 		    		<p><strong>________________</strong></p></a>
 		    	</div>
 		    	<div class="col-lg-4 col-md-4 col-sm-4">
 		    		<a href="cosmetics.html">
-		    		<h3>cosmetics production</h3>
+		    		<h3 class="lang" key='product3'>cosmetics production</h3>
 		    		<p><strong>_______________</strong></p></a>
 		    	</div>
 		    </div>
@@ -68,12 +117,12 @@
 	</section>
     <section class="features">
          <div class="container">
-            <h2 class="section-header">features</h2>
+            <h2 class="section-header lang" key="feath1">features</h2>
             <div class="featured-slider">
             <div class="features-block">
             <div class="features-img">
             <picture><source srcset="img/featured/1.svg" type="image/"><img src="img/png/003-hands.png" alt=""></picture></div>
-            <h3>quality</h3></div>
+            <h3 class="lang" key="feat1">quality</h3></div>
             <div class="features-block">
             <div class="features-img">
             <picture>
@@ -81,7 +130,7 @@
             <img src="img/png/001-nature.png" alt="">
             </picture>
             </div>
-            <h3>eco-friendly</h3>
+            <h3  class="lang" key="feat2">eco-friendly</h3>
             </div>
             <div class="features-block">
             <div class="features-img">
@@ -90,7 +139,7 @@
             <img src="img/png/002-favorite.png" alt="">
             </picture>
             </div>
-            <h3>unique design</h3>
+            <h3  class="lang" key="feat3">unique design</h3>
             </div>
             <div class="features-block">
             <div class="features-img">
@@ -99,29 +148,29 @@
             <img src="img/png/004-placeholder.png" alt="">
             </picture>
             </div>
-            <h3>made by local resources</h3>
+            <h3  class="lang" key="feat4">made by local resources</h3>
             </div>
             </div>
             </div>
     </section>
     <section class="feedback">
     	<div class="container">
-    		<h2>отзывы</h2>
+    		<h2 class="lang" key="feedh2">отзывы</h2>
     		<div class="row">
     			<div class="col-lg-6 col-md-6 col-sm-6 st">
     				<div class="col-lg-12">
     					<img src="img/feedback1.png" alt="">
-    					<h4>Begimai Baktybek kyzy</h4>
+    					<h4 class="lang" key="feedname">Begimai Baktybek kyzy</h4>
     				</div>
-    				<div class="col-lg-12 col-md-12 col-sm-12"><p>Очень вкусное варенье! Мне нравиться, а главное что из экологически чистых продуктов! А мыло просто супер, пользуюсь ! Поддержим отечественное, поддержим этот проект! Спасибо вам за вашу работу</p></div>
+    				<div class="col-lg-12 col-md-12 col-sm-12 lang" key="feedp"><p>Очень вкусное варенье! Мне нравиться, а главное что из экологически чистых продуктов! А мыло просто супер, пользуюсь ! Поддержим отечественное, поддержим этот проект! Спасибо вам за вашу работу</p></div>
     			</div>
 
     			<div class="col-lg-6 col-md-6 col-sm-6">
     				<div class="col-lg-12">
     					<img src="img/feedback2.png" alt="">
-    					<h4>Seema Tiwari</h4>
+    					<h4 class="lang" key="feedname2">Seema Tiwari</h4>
     				</div>
-    				<div class="col-lg-12 col-md-12 col-sm-12"><p>This is a very good project I give a 5 stars</p></div>
+    				<div class="col-lg-12 col-md-12 col-sm-12 lang" key="feedp2"><p>This is a very good project I give a 5 stars</p></div>
     			</div>
     		</div>
     	</div>
